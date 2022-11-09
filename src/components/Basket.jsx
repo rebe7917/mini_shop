@@ -10,8 +10,9 @@ function Basket(props) {
     <section className="Basket">
       <ul>
         {props.cart.map((item) => (
-          <li>
-            {item.productdisplayname} x {item.amount}, {item.amount * item.price},-{" "}
+          <li key={item.id}>
+            {item.productdisplayname} x {item.amount}, {item.amount * item.price},-
+            <button onClick={()=>props.removeFromCart(item.id)}>X</button>
           </li>
         ))}
         {/*  <li>some product x 3</li> */}
